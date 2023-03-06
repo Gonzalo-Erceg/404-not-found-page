@@ -1,0 +1,154 @@
+.app{
+    width: 90%;
+    min-height: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+
+.notFound{
+    font-family: 'Inconsolata', monospace;
+    font-size: 24px;
+    position: absolute;
+}
+
+.title{
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.subTitle{
+    max-width: 400px;
+}
+
+.subTitle h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+.button{
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    color:#fff;
+    background:#333333;
+    padding: 24px 43px;
+    box-sizing: content-box;
+    cursor: pointer;
+    position: relative;
+    transition: color .5s ease-in-out;
+}
+
+
+.button::before{
+    content: "";
+    background: #FF6D5B;
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left: 0;
+    clip-path: circle(0.4% at 0 50%);
+
+    transition: clip-path .4s ease-in-out ;
+ 
+}
+
+.button:hover::before{
+  
+    clip-path: circle(141.5% at 0 0);
+
+}
+.button:hover{
+    color:#000
+}
+
+.button:active::before{
+    background: #ff9485;
+}
+
+.button span{
+    position: relative;
+    z-index: 2;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.info{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:36px    
+}
+
+.img{
+    max-width: 540px;
+    
+    align-self: center;
+}
+
+.created{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color:#BDBDBD;
+    position: relative;
+    bottom:23px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    
+}
+.created a{
+    text-decoration: none;
+    color:#BDBDBD;
+}
+.created a:hover{
+  
+    color:#314ef0;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:1050px){
+    .title{
+        font-size: 48px;
+
+    }
+    .subTitle h2{
+        font-size: 18px;
+    }
+    
+}
+
+@media(max-width:900px){
+    .img{
+        justify-self: center;
+        max-width: 286px;
+    }
+    .info{
+        margin-left: 20px;
+    }
+    .content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .created{
+        bottom:0
+    }
+}
